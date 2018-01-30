@@ -84,5 +84,5 @@
     }
   }
   
-  Plotly.newPlot('target', traces, layout, {displayModeBar: false});
+  Plotly.newPlot('target', traces, layout, {displayModeBar: true});
 })(window);
