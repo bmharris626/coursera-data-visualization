@@ -12,14 +12,37 @@
     },
     nodes: {
         shape: 'dot',
-        size: 8,
+        size: 20
     },
-    physics: {
-      enabled: false
+    physics:{
+      // barnesHut:{
+      //   avoidOverlap: 1,
+      //   gravitationalConstant: -50000,
+      //   springLength: 20,
+      //   centralGravity: 3,
+      //   springConstant: 0.04,
+      // },
+      forceAtlas2Based: {
+        avoidOverlap: 1,
+        // gravitationalConstant: -150,
+        springLength: 75,
+        // springConstant: .08,
+        // centralGravity: .1
+      },
+      solver: "forceAtlas2Based",
+      stabilization: {
+        enabled: true,
+        iterations: 1000
+      },
+      timestep: .3
     },
-    interaction:{
-      zoomView: false
-    }
+    // smoothCurves: {dynamic:false},
+    // hideEdgesOnDrag: true,
+    // stabilize: true,
+    // stabilizationIterations: 1000,
+    // zoomExtentOnStabilize: false,
+    // navigation: true,
+    // keyboard: true,
   };
   var network = new vis.Network(container, data, options);
 
